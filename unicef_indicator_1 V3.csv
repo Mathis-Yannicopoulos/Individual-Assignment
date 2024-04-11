@@ -1,0 +1,311 @@
+country;year;vv;sex;current_age;obs_value
+Afghanistan;2020;5.1;Female;5 to 17 years old;0.051
+Afghanistan;2020;12.6;Male;5 to 17 years old;0.126
+Afghanistan;2020;9;Total;5 to 17 years old;0.09
+Albania;2010;2.1;Female;5 to 17 years old;0.021
+Albania;2010;3.4;Male;5 to 17 years old;0.034
+Albania;2010;2.8;Total;5 to 17 years old;0.028
+Algeria;2019;1.3;Female;5 to 17 years old;0.013
+Algeria;2019;2.5;Male;5 to 17 years old;0.025
+Algeria;2019;1.9;Total;5 to 17 years old;0.019
+Angola;2016;10.434;Female;5 to 17 years old;0.10434
+Angola;2016;8.923;Male;5 to 17 years old;0.08923
+Angola;2016;9.666;Total;5 to 17 years old;0.09666
+Armenia;2015;2.7;Female;5 to 17 years old;0.027
+Armenia;2015;4.9;Male;5 to 17 years old;0.049
+Armenia;2015;3.9;Total;5 to 17 years old;0.039
+Bangladesh;2019;3;Female;5 to 17 years old;0.03
+Bangladesh;2019;8.7;Male;5 to 17 years old;0.087
+Bangladesh;2019;5.9;Total;5 to 17 years old;0.059
+Barbados;2012;0.836;Female;5 to 14 years old;0.00836
+Barbados;2012;1.665;Male;5 to 14 years old;0.01665
+Barbados;2012;1.245;Total;5 to 14 years old;0.01245
+Belarus;2019;3.4;Female;5 to 17 years old;0.034
+Belarus;2019;4.6;Male;5 to 17 years old;0.046
+Belarus;2019;4;Total;5 to 17 years old;0.04
+Belize;2013;1.2;Female;5 to 17 years old;0.012
+Belize;2013;3.2;Male;5 to 17 years old;0.032
+Belize;2013;2.2;Total;5 to 17 years old;0.022
+Benin;2018;16.1;Female;5 to 17 years old;0.161
+Benin;2018;17.9;Male;5 to 17 years old;0.179
+Benin;2018;17;Total;5 to 17 years old;0.17
+Bhutan;2010;1.734;Female;5 to 14 years old;0.01734
+Bhutan;2010;1.622;Male;5 to 14 years old;0.01622
+Bhutan;2010;1.68;Total;5 to 14 years old;0.0168
+Bolivia, Plurinational State of;2019;11.7;Female;5 to 17 years old;0.117
+Bolivia, Plurinational State of;2019;13;Male;5 to 17 years old;0.13
+Bolivia, Plurinational State of;2019;12.3;Total;5 to 17 years old;0.123
+Brazil;2015;2;Female;5 to 17 years old;0.02
+Brazil;2015;4.6;Male;5 to 17 years old;0.046
+Brazil;2015;3.4;Total;5 to 17 years old;0.034
+Burkina Faso;2010;30.071;Female;5 to 14 years old;0.30071
+Burkina Faso;2010;40.13;Male;5 to 14 years old;0.4013
+Burkina Faso;2010;35.117;Total;5 to 14 years old;0.35117
+Burundi;2017;19.44;Female;5 to 17 years old;0.1944
+Burundi;2017;21.536;Male;5 to 17 years old;0.21536
+Burundi;2017;20.479;Total;5 to 17 years old;0.20479
+Cambodia;2017;13.56;Female;5 to 17 years old;0.1356
+Cambodia;2017;13.42;Male;5 to 17 years old;0.1342
+Cambodia;2017;13.48;Total;5 to 17 years old;0.1348
+Cameroon;2014;32.776;Female;5 to 17 years old;0.32776
+Cameroon;2014;38.461;Male;5 to 17 years old;0.38461
+Cameroon;2014;33.36;Total;5 to 17 years old;0.3336
+Central African Republic;2019;19.488;Female;5 to 17 years old;0.19488
+Central African Republic;2019;17.342;Male;5 to 17 years old;0.17342
+Central African Republic;2019;18.378;Total;5 to 17 years old;0.18378
+Chad;2019;27.8;Female;5 to 17 years old;0.278
+Chad;2019;33.8;Male;5 to 17 years old;0.338
+Chad;2019;30.9;Total;5 to 17 years old;0.309
+Chile;2012;1.4;Female;5 to 17 years old;0.014
+Chile;2012;3.3;Male;5 to 17 years old;0.033
+Chile;2012;2.3;Total;5 to 17 years old;0.023
+Colombia;2020;3.79;Female;5 to 17 years old;0.0379
+Colombia;2020;5.524;Male;5 to 17 years old;0.05524
+Colombia;2020;4.696;Total;5 to 17 years old;0.04696
+Comoros;2012;20.142;Female;5 to 14 years old;0.20142
+Comoros;2012;20.577;Male;5 to 14 years old;0.20577
+Comoros;2012;20.38;Total;5 to 14 years old;0.2038
+Congo;2015;11.738;Female;5 to 17 years old;0.11738
+Congo;2015;9.929;Male;5 to 17 years old;0.09929
+Congo;2015;10.842;Total;5 to 17 years old;0.10842
+Costa Rica;2018;2.7;Female;5 to 17 years old;0.027
+Costa Rica;2018;4;Male;5 to 17 years old;0.04
+Costa Rica;2018;3.4;Total;5 to 17 years old;0.034
+Ivory Coast;2016;15.8;Female;5 to 17 years old;0.158
+Ivory Coast;2016;19.3;Male;5 to 17 years old;0.193
+Ivory Coast;2016;17.5;Total;5 to 17 years old;0.175
+Korea, Democratic People's Republic of;2017;3.7;Female;5 to 17 years old;0.037
+Korea, Democratic People's Republic of;2017;4.3;Male;5 to 17 years old;0.043
+Korea, Democratic People's Republic of;2017;4;Total;5 to 17 years old;0.04
+Congo, the Democratic Republic of the;2018;9.2;Female;5 to 17 years old;0.092
+Congo, the Democratic Republic of the;2018;9.2;Male;5 to 17 years old;0.092
+Congo, the Democratic Republic of the;2018;9.2;Total;5 to 17 years old;0.092
+Dominican Republic;2019;2.033;Female;5 to 17 years old;0.02033
+Dominican Republic;2019;4.068;Male;5 to 17 years old;0.04068
+Dominican Republic;2019;3.068;Total;5 to 17 years old;0.03068
+Ecuador;2021;3.93;Female;5 to 17 years old;0.0393
+Ecuador;2021;4.522;Male;5 to 17 years old;0.04522
+Ecuador;2021;4.236;Total;5 to 17 years old;0.04236
+Egypt;2014;1.444;Female;5 to 17 years old;0.01444
+Egypt;2014;5.561;Male;5 to 17 years old;0.05561
+Egypt;2014;3.581;Total;5 to 17 years old;0.03581
+El Salvador;2020;1.45;Female;5 to 17 years old;0.0145
+El Salvador;2020;5.65;Male;5 to 17 years old;0.0565
+El Salvador;2020;3.564;Total;5 to 17 years old;0.03564
+Swaziland;2010;5.703;Female;5 to 14 years old;0.05703
+Swaziland;2010;6.493;Male;5 to 14 years old;0.06493
+Swaziland;2010;6.11;Total;5 to 14 years old;0.0611
+Ethiopia;2015;32.1;Female;5 to 14 years old;0.321
+Ethiopia;2015;48.3;Male;5 to 14 years old;0.483
+Ethiopia;2015;40.5;Total;5 to 14 years old;0.405
+Fiji;2021;12.299;Female;5 to 17 years old;0.12299
+Fiji;2021;18.778;Male;5 to 17 years old;0.18778
+Fiji;2021;15.647;Total;5 to 17 years old;0.15647
+Gabon;2012;13.707;Female;5 to 14 years old;0.13707
+Gabon;2012;16.078;Male;5 to 14 years old;0.16078
+Gabon;2012;14.53;Total;5 to 14 years old;0.1453
+Gambia;2018;11.93;Female;5 to 17 years old;0.1193
+Gambia;2018;15.49;Male;5 to 17 years old;0.1549
+Gambia;2018;13.59;Total;5 to 17 years old;0.1359
+Georgia;2015;0.9;Female;5 to 17 years old;0.009
+Georgia;2015;2.1;Male;5 to 17 years old;0.021
+Georgia;2015;1.5;Total;5 to 17 years old;0.015
+Ghana;2018;15.2;Female;5 to 17 years old;0.152
+Ghana;2018;14.5;Male;5 to 17 years old;0.145
+Ghana;2018;14.8;Total;5 to 17 years old;0.148
+Guatemala;2013;4.6;Female;7 to 17 years old;0.046
+Guatemala;2013;11.4;Male;7 to 17 years old;0.114
+Guatemala;2013;8.1;Total;7 to 17 years old;0.081
+Guinea;2016;17.813;Female;5 to 17 years old;0.17813
+Guinea;2016;21.081;Male;5 to 17 years old;0.21081
+Guinea;2016;19.472;Total;5 to 17 years old;0.19472
+Guinea-Bissau;2019;12.9;Female;5 to 17 years old;0.129
+Guinea-Bissau;2019;16.9;Male;5 to 17 years old;0.169
+Guinea-Bissau;2019;14.9;Total;5 to 17 years old;0.149
+Guyana;2014;11.1;Female;5 to 17 years old;0.111
+Guyana;2014;9.6;Male;5 to 17 years old;0.096
+Guyana;2014;9.7;Total;5 to 17 years old;0.097
+Haiti;2012;20.218;Female;5 to 14 years old;0.20218
+Haiti;2012;22.442;Male;5 to 14 years old;0.22442
+Haiti;2012;21.606;Total;5 to 14 years old;0.21606
+Honduras;2019;7.9;Female;5 to 17 years old;0.079
+Honduras;2019;16.2;Male;5 to 17 years old;0.162
+Honduras;2019;12.2;Total;5 to 17 years old;0.122
+India;2012;3.1;Female;5 to 17 years old;0.031
+India;2012;5.3;Male;5 to 17 years old;0.053
+India;2012;4.3;Total;5 to 17 years old;0.043
+Indonesia;2021;1.74;Total;5 to 17 years old;0.0174
+Iraq;2018;1.9;Female;5 to 17 years old;0.019
+Iraq;2018;4.3;Male;5 to 17 years old;0.043
+Iraq;2018;3.1;Total;5 to 17 years old;0.031
+Jamaica;2016;2.2;Female;5 to 17 years old;0.022
+Jamaica;2016;3.1;Male;5 to 17 years old;0.031
+Jamaica;2016;2.7;Total;5 to 17 years old;0.027
+Jordan;2016;0.2;Female;5 to 17 years old;0.002
+Jordan;2016;2.2;Male;5 to 17 years old;0.022
+Jordan;2016;1.2;Total;5 to 17 years old;0.012
+Kenya;2019;16.376;Female;5 to 17 years old;0.16376
+Kenya;2019;20.939;Male;5 to 17 years old;0.20939
+Kenya;2019;18.762;Total;5 to 17 years old;0.18762
+Kiribati;2019;5.5;Female;5 to 17 years old;0.055
+Kiribati;2019;8.6;Male;5 to 17 years old;0.086
+Kiribati;2019;7.1;Total;5 to 17 years old;0.071
+Kyrgyzstan;2018;15.6;Female;5 to 17 years old;0.156
+Kyrgyzstan;2018;24.2;Male;5 to 17 years old;0.242
+Kyrgyzstan;2018;20.1;Total;5 to 17 years old;0.201
+Lao People's Democratic Republic;2017;26.2;Female;5 to 17 years old;0.262
+Lao People's Democratic Republic;2017;26.3;Male;5 to 17 years old;0.263
+Lao People's Democratic Republic;2017;26.3;Total;5 to 17 years old;0.263
+Lesotho;2018;5.4;Female;5 to 17 years old;0.054
+Lesotho;2018;11.1;Male;5 to 17 years old;0.111
+Lesotho;2018;8.2;Total;5 to 17 years old;0.082
+Liberia;2020;22.4;Female;5 to 17 years old;0.224
+Liberia;2020;19.9;Male;5 to 17 years old;0.199
+Liberia;2020;21.1;Total;5 to 17 years old;0.211
+Madagascar;2018;26.2;Female;5 to 17 years old;0.262
+Madagascar;2018;33.4;Male;5 to 17 years old;0.334
+Madagascar;2018;29.8;Total;5 to 17 years old;0.298
+Malawi;2020;8.026;Female;5 to 17 years old;0.08026
+Malawi;2020;11.913;Male;5 to 17 years old;0.11913
+Malawi;2020;9.954;Total;5 to 17 years old;0.09954
+Mali;2017;7.7;Female;6 to 17 years old;0.077
+Mali;2017;12.9;Male;6 to 17 years old;0.129
+Mali;2017;10.4;Total;6 to 17 years old;0.104
+Mauritania;2015;10.4;Female;5 to 17 years old;0.104
+Mauritania;2015;14.8;Male;5 to 17 years old;0.148
+Mauritania;2015;12.6;Total;5 to 17 years old;0.126
+Mexico;2019;1.872;Female;5 to 17 years old;0.01872
+Mexico;2019;5.001;Male;5 to 17 years old;0.05001
+Mexico;2019;3.479;Total;5 to 17 years old;0.03479
+Mongolia;2018;6.5;Female;5 to 17 years old;0.065
+Mongolia;2018;9.1;Male;5 to 17 years old;0.091
+Mongolia;2018;7.9;Total;5 to 17 years old;0.079
+Montenegro;2018;6.9;Female;5 to 17 years old;0.069
+Montenegro;2018;8.4;Male;5 to 17 years old;0.084
+Montenegro;2018;7.7;Total;5 to 17 years old;0.077
+Myanmar;2015;7.6;Female;5 to 17 years old;0.076
+Myanmar;2015;8.7;Male;5 to 17 years old;0.087
+Myanmar;2015;8.1;Total;5 to 17 years old;0.081
+Nepal;2014;19.3;Female;5 to 17 years old;0.193
+Nepal;2014;19;Male;5 to 17 years old;0.19
+Nepal;2014;19.2;Total;5 to 17 years old;0.192
+Nicaragua;2012;17.9;Female;10 to 17 years old;0.179
+Nicaragua;2012;33.3;Male;10 to 17 years old;0.333
+Nicaragua;2012;25.9;Total;10 to 17 years old;0.259
+Niger;2012;27.319;Female;5 to 14 years old;0.27319
+Niger;2012;29.929;Male;5 to 14 years old;0.29929
+Niger;2012;28.791;Total;5 to 14 years old;0.28791
+Nigeria;2021;24.831;Female;5 to 17 years old;0.24831
+Nigeria;2021;28.893;Male;5 to 17 years old;0.28893
+Nigeria;2021;26.899;Total;5 to 17 years old;0.26899
+Macedonia, the former Yugoslav Republic of;2019;1.6;Female;5 to 17 years old;0.016
+Macedonia, the former Yugoslav Republic of;2019;3.4;Male;5 to 17 years old;0.034
+Macedonia, the former Yugoslav Republic of;2019;2.4;Total;5 to 17 years old;0.024
+Pakistan;2018;5.1;Female;10 to 17 years old;0.051
+Pakistan;2018;12.4;Male;10 to 17 years old;0.124
+Pakistan;2018;9;Total;10 to 17 years old;0.09
+Panama;2016;1.195;Female;5 to 17 years old;0.01195
+Panama;2016;3.176;Male;5 to 17 years old;0.03176
+Panama;2016;2.207;Total;5 to 17 years old;0.02207
+Paraguay;2016;11.463;Female;5 to 17 years old;0.11463
+Paraguay;2016;19.399;Male;5 to 17 years old;0.19399
+Paraguay;2016;15.524;Total;5 to 17 years old;0.15524
+Peru;2020;7.53;Female;5 to 17 years old;0.0753
+Peru;2020;9.15;Male;5 to 17 years old;0.0915
+Peru;2020;8.35;Total;5 to 17 years old;0.0835
+Philippines;2020;0.67;Female;5 to 17 years old;0.0067
+Philippines;2020;1.3;Male;5 to 17 years old;0.013
+Philippines;2020;0.99;Total;5 to 17 years old;0.0099
+Rwanda;2017;3.2;Female;6 to 17 years old;0.032
+Rwanda;2017;3.9;Male;6 to 17 years old;0.039
+Rwanda;2017;3.5;Total;6 to 17 years old;0.035
+Saint Lucia;2012;1.379;Female;5 to 14 years old;0.01379
+Saint Lucia;2012;2.398;Male;5 to 14 years old;0.02398
+Saint Lucia;2012;1.917;Total;5 to 14 years old;0.01917
+Samoa;2020;10.8;Female;5 to 17 years old;0.108
+Samoa;2020;14.9;Male;5 to 17 years old;0.149
+Samoa;2020;13;Total;5 to 17 years old;0.13
+Sao Tome and Principe;2019;7.4;Female;5 to 17 years old;0.074
+Sao Tome and Principe;2019;6.1;Male;5 to 17 years old;0.061
+Sao Tome and Principe;2019;6.7;Total;5 to 17 years old;0.067
+Senegal;2016;8.641;Female;5 to 17 years old;0.08641
+Senegal;2016;25.652;Male;5 to 17 years old;0.25652
+Senegal;2016;17.137;Total;5 to 17 years old;0.17137
+Serbia;2019;6.8;Female;5 to 17 years old;0.068
+Serbia;2019;11.1;Male;5 to 17 years old;0.111
+Serbia;2019;9.1;Total;5 to 17 years old;0.091
+Sierra Leone;2017;19.6;Female;5 to 17 years old;0.196
+Sierra Leone;2017;22.5;Male;5 to 17 years old;0.225
+Sierra Leone;2017;21;Total;5 to 17 years old;0.21
+Solomon Islands;2015;13.81;Female;5 to 14 years old;0.1381
+Solomon Islands;2015;13.76;Male;5 to 14 years old;0.1376
+Solomon Islands;2015;13.8;Total;5 to 14 years old;0.138
+South Africa;2015;1.3;Female;7 to 17 years old;0.013
+South Africa;2015;2.4;Male;7 to 17 years old;0.024
+South Africa;2015;1.9;Total;7 to 17 years old;0.019
+Sri Lanka;2016;0.61;Female;5 to 17 years old;0.0061
+Sri Lanka;2016;0.94;Male;5 to 17 years old;0.0094
+Sri Lanka;2016;0.78;Total;5 to 17 years old;0.0078
+Palestinian Territory, Occupied;2020;3.3;Female;5 to 17 years old;0.033
+Palestinian Territory, Occupied;2020;9.2;Male;5 to 17 years old;0.092
+Palestinian Territory, Occupied;2020;6.3;Total;5 to 17 years old;0.063
+Sudan;2014;15.227;Female;5 to 17 years old;0.15227
+Sudan;2014;19.344;Male;5 to 17 years old;0.19344
+Sudan;2014;15.27;Total;5 to 17 years old;0.1527
+Suriname;2018;2.4;Female;5 to 17 years old;0.024
+Suriname;2018;4.4;Male;5 to 17 years old;0.044
+Suriname;2018;3.4;Total;5 to 17 years old;0.034
+Timor-Leste;2016;6.85;Female;5 to 17 years old;0.0685
+Timor-Leste;2016;7.59;Male;5 to 17 years old;0.0759
+Timor-Leste;2016;7.23;Total;5 to 17 years old;0.0723
+Togo;2017;31.2;Female;5 to 17 years old;0.312
+Togo;2017;34.5;Male;5 to 17 years old;0.345
+Togo;2017;32.9;Total;5 to 17 years old;0.329
+Tonga;2019;18.5;Female;5 to 17 years old;0.185
+Tonga;2019;32.9;Male;5 to 17 years old;0.329
+Tonga;2019;25.9;Total;5 to 17 years old;0.259
+Trinidad and Tobago;2011;0.799;Female;5 to 14 years old;0.00799
+Trinidad and Tobago;2011;0.691;Male;5 to 14 years old;0.00691
+Trinidad and Tobago;2011;0.743;Total;5 to 14 years old;0.00743
+Tunisia;2012;1.108;Female;5 to 14 years old;0.01108
+Tunisia;2012;2.365;Male;5 to 14 years old;0.02365
+Tunisia;2012;1.757;Total;5 to 14 years old;0.01757
+Turkmenistan;2016;0.119;Female;5 to 17 years old;0.00119
+Turkmenistan;2016;0.393;Male;5 to 17 years old;0.00393
+Turkmenistan;2016;0.261;Total;5 to 17 years old;0.00261
+Turks and Caicos Islands;2020;2.2;Female;5 to 17 years old;0.022
+Turks and Caicos Islands;2020;5.7;Male;5 to 17 years old;0.057
+Turks and Caicos Islands;2020;4.1;Total;5 to 17 years old;0.041
+Tuvalu;2020;4;Female;5 to 17 years old;0.04
+Tuvalu;2020;3.4;Male;5 to 17 years old;0.034
+Tuvalu;2020;3.7;Total;5 to 17 years old;0.037
+Turkey;2019;0.822;Female;5 to 17 years old;0.00822
+Turkey;2019;2.852;Male;5 to 17 years old;0.02852
+Turkey;2019;1.864;Total;5 to 17 years old;0.01864
+Uganda;2017;11.8;Female;5 to 17 years old;0.118
+Uganda;2017;14.7;Male;5 to 17 years old;0.147
+Uganda;2017;13.2;Total;5 to 17 years old;0.132
+Ukraine;2012;2.108;Female;5 to 14 years old;0.02108
+Ukraine;2012;2.224;Male;5 to 14 years old;0.02224
+Ukraine;2012;2.167;Total;5 to 14 years old;0.02167
+Tanzania, United Republic of;2021;13;Female;5 to 17 years old;0.13
+Tanzania, United Republic of;2021;16.9;Male;5 to 17 years old;0.169
+Tanzania, United Republic of;2021;15;Total;5 to 17 years old;0.15
+Uruguay;2010;2.3;Female;5 to 17 years old;0.023
+Uruguay;2010;5.1;Male;5 to 17 years old;0.051
+Uruguay;2010;3.7;Total;5 to 17 years old;0.037
+Uzbekistan;2022;14.537;Female;5 to 17 years old;0.14537
+Uzbekistan;2022;21.084;Male;5 to 17 years old;0.21084
+Uzbekistan;2022;17.84;Total;5 to 17 years old;0.1784
+Vanuatu;2013;15.822;Female;5 to 14 years old;0.15822
+Vanuatu;2013;14.242;Male;5 to 14 years old;0.14242
+Vanuatu;2013;15.01;Total;5 to 14 years old;0.1501
+Viet Nam;2021;6.247;Female;5 to 17 years old;0.06247
+Viet Nam;2021;5.171;Male;5 to 17 years old;0.05171
+Viet Nam;2021;5.693;Total;5 to 17 years old;0.05693
+Zambia;2012;20.1;Female;5 to 17 years old;0.201
+Zambia;2012;20.2;Male;5 to 17 years old;0.202
+Zambia;2012;20.2;Total;5 to 17 years old;0.202
+Zimbabwe;2019;19;Female;5 to 17 years old;0.19
+Zimbabwe;2019;31.8;Male;5 to 17 years old;0.318
+Zimbabwe;2019;25.6;Total;5 to 17 years old;0.256

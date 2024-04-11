@@ -1,0 +1,380 @@
+---
+title: "Child Labor Unveiled: A Global Perspective"
+subtitle: "Produced for Data Analytics and Story Telling (DCU)"
+format:
+  html :
+    toc : TRUE
+    toc-location : left-body
+    embed-resources: true
+    smooth-scroll: true
+output :
+  fig_width: 4
+  fig_height: 3
+theme: darkly
+
+date : "2024-04-10"
+author : Mathis Yannicopoulos
+execute: 
+  echo: false
+  warning: false
+  message : false
+---
+
+::: {.card .text-white .bg-primary .mb-3 style="max-width: 50rem;"}
+::: card-header
+# Introduction {.card-header}
+:::
+
+::: card-body
+Welcome to an exploration of **one of the most pressing global issues:** [**child labor**]{style="color: #f29c13; font-weight: bold;"}. In this journey, we delve into the intricate webs of child labor dynamics across continents and time. Through data visualization and analysis, we aim to shed light on the harsh realities faced by [millions of children worldwide]{.underline} who are deprived of their childhood and forced into labor. Join us as we uncover the patterns, trends, and narratives behind this critical issue, and embark on **a quest for understanding and change.**
+:::
+:::
+
+![african girl carrying water from the well in Ethiopia, Africa](images/african-girl-carrying-water-from-the-well-ethiopia-africa.webp)
+
+# Exploring Child Labor Rates Across the World
+
+```{r}
+#| label: setup
+#| include : false
+
+# libraries
+library(tidyverse)
+library(gapminder)
+library(dplyr)
+library(ggplot2)
+library(plotly)
+library(readr)
+library(viridis)
+
+# data
+unicef_metadata <- read.csv("~/Individual Assignment v3/unicef_metadata.csv", sep=";")
+unicef_indicator_1.V3 <- read.csv("~/Individual Assignment v3/unicef_indicator_1 V3.csv", sep=";")
+countryContinent <- read.csv("~/Individual Assignment v3/countryContinent.csv", sep=";")
+names(unicef_indicator_1.V3)[names(unicef_indicator_1.V3) == "vv"] <- "Child_labor_in_percentage"
+
+names(unicef_metadata)[names(unicef_metadata) == "Life.expectancy.at.birth..total..years."] <- "Life_expectancy_at_birth"
+
+data_join_alpha <- full_join(unicef_metadata, unicef_indicator_1.V3, by = join_by(country == country, year == year))
+data_join_alpha <- full_join(data_join_alpha, countryContinent, by = join_by(country == country, numeric_code == country_code))
+data_join_beta <- full_join(unicef_indicator_1.V3, unicef_metadata, by = join_by(country == country, year == year))
+data_join_beta <- full_join(data_join_beta, countryContinent, by = join_by(country == country, numeric_code == country_code))
+
+data_join_alpha <- data_join_alpha %>%
+  mutate(continent = ifelse(country == "Macedonia, the former Yugoslav Republic of", "Europe", continent),
+         sub_region = ifelse(country == "Macedonia, the former Yugoslav Republic of", "Southern Europe", sub_region))
+
+data_join_alpha <- data_join_alpha %>%
+  mutate(continent = ifelse(country == "Palestinian Territory, Occupied", "Asia", continent),
+         sub_region = ifelse(country == "Palestinian Territory, Occupied", "Western Asia", sub_region))
+
+data_join_beta <- data_join_beta %>%
+  mutate(continent = ifelse(country == "Macedonia, the former Yugoslav Republic of", "Europe", continent),
+         sub_region = ifelse(country == "Macedonia, the former Yugoslav Republic of", "Southern Europe", sub_region))
+
+data_join_beta <- data_join_beta %>%
+  mutate(continent = ifelse(country == "Palestinian Territory, Occupied", "Asia", continent),
+         sub_region = ifelse(country == "Palestinian Territory, Occupied", "Western Asia", sub_region))
+
+data_join_alpha_nosex <- filter(data_join_alpha, sex == "Total")
+data_join_beta_nosex <- filter(data_join_beta, sex == "Total")
+
+
+map_world <- map_data("world")
+
+```
+
+```{r}
+#| label: map
+
+# data 
+map_1<- full_join(data_join_alpha_nosex, map_world, by = c("country" = "region"))
+
+# script
+
+map_1_subset <- subset(map_1, long > -170 & long < 180 & lat > -55 & lat < 90)
+map_1_subset_background_color <- "#232322"
+map_1_subset_fill_colors <- c("#00bc8c", "#f39d12", "#e74c3d")
+
+
+map_1_subset %>%
+  ggplot() +
+  aes(x = long, y = lat, group = group, fill = Child_labor_in_percentage) +
+  geom_polygon(color = "black") +
+  scale_fill_gradientn(colors = map_1_subset_fill_colors) +  # Utiliser les couleurs définies
+  labs(
+    title = "Differences between countries regarding child labor",
+    subtitle = "Countries in grey have no data",
+    caption = "Source: Unicef",
+    fill = "Child labor in %"
+  ) +
+  theme_void() +  # Supprimer les axes et les légendes
+  theme(
+    plot.background = element_rect(fill = map_1_subset_background_color),  # Définir la couleur de fond
+    plot.title = element_text(color = "white"),  # Définir la couleur du titre
+    plot.subtitle = element_text(color = "white", size = 8, hjust = 0, vjust = 0),  # Personnaliser le sous-titre
+    plot.caption = element_text(color = "white", size = 8, hjust = 0, vjust = 1),  # Personnaliser la légende
+    legend.title = element_text(color = "white"),  # Définir la couleur du titre de la légende
+    legend.text = element_text(color = "white")  # Définir la couleur du texte de la légende
+  ) +
+  guides(fill = guide_colorbar(title.position = "top"))
+
+```
+
+::: {.card .text-white .bg-info .mb-3 style="max-width: 40rem;"}
+::: card-header
+### **What can we learn from this?** {.card-header}
+:::
+
+::: card-body
+As we traverse the vivid hues of this map, we are confronted with a stark reality – **a spectrum of vulnerability unfolds across continents**. The prevalence of child labor, ranging from subtle green whispers to fiery red warnings, paints a poignant narrative of societal challenges and disparities. In Africa, particularly in countries like **Ethiopia** boasting a staggering **40.5% rate**, the colors intensify, underscoring the urgent need for concerted efforts towards safeguarding childhoods and ensuring equitable opportunities for every child, irrespective of geographical boundaries.
+:::
+:::
+
+# Unveiling Gendered Realities: Exploring Child Labor Distribution
+
+Our next step is to analyze [how child labor is distributed between genders]{style="color: #f29c13; font-weight: bold;"}, first on a continental scale and then by zooming in on specific regions within each continent. This closer examination aims to uncover trends and dynamics, providing valuable insights into the gendered aspects of child labor and guiding targeted interventions to safeguard children's rights worldwide.
+
+## Global Child Labor: Gender Disparities and Continental Contrasts
+
+```{r}
+#| label: plot continents
+
+colors <- c("Female" = "#bcacb5", "Male" = "#365b7f")
+
+
+data_aggregated <- data_join_beta %>%
+  filter(sex != "Total") %>%
+  group_by(continent, sub_region, sex) %>%
+  summarise(average_childlabor = round(mean(Child_labor_in_percentage, na.rm = TRUE), 2))
+
+data_aggregated_clean <- na.omit(data_aggregated)
+
+plot_continents <- data_aggregated_clean %>%
+  ggplot(aes(x = sex, y = average_childlabor, fill = sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_grid(~continent, scales = "fixed") +
+  labs(title = "Average Child labor by Sex and Continent", x = "", y = "Average child labor in %") +
+  theme_minimal() +
+  scale_fill_manual(values = colors) +
+  theme(plot.background = element_rect(fill = "#232322"),
+        text = element_text(color = "white"), strip.text = element_text(color = "white"), axis.text.y = element_text(color = "white"), axis.text.x = element_text(color = "#232322"),) 
+  
+  
+
+ggplotly(plot_continents, tooltip = "average_childlabor")
+```
+
+::: {.card .text-white .bg-info .mb-3 style="max-width: 40rem;"}
+::: card-header
+### **What can we learn from this?** {.card-header}
+:::
+
+::: card-body
+Across continents, stark differences in child labor prevalence are evident, with **Africa bearing the highest burden** followed by notable rates in **Oceania** and **Asia.** Moreover, a consistent trend emerges: [boys are more disproportionately affected than girls]{style="color: #f29c13; font-weight: bold;"}. This succinct snapshot underscores the urgent need for targeted interventions to address gender disparities and safeguard children's rights universally.
+:::
+:::
+
+## Gender Disparities in Child Labor Across Sub-Regions of Continents
+
+```{r}
+#| label: plot europe
+
+#data 
+data_join_alpha_sex <- filter(data_join_alpha, sex != "Total")
+data_join_alpha_sex <- filter(data_join_alpha, continent != "NA")
+
+#script
+
+plot_europe <- data_join_beta %>%
+  filter(continent == "Europe", sex != "Total", !is.na(Child_labor_in_percentage), !is.na(sex)) %>%
+  ggplot(aes(x = sex, y = Child_labor_in_percentage, fill = sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ sub_region, scales = "fixed") +
+  labs(title = "Europe", x = "", y = "Child labor in %") +
+  theme_minimal() + 
+  scale_fill_manual(values = colors) +
+  scale_y_continuous(limits = c(0, 50))+
+  theme(plot.background = element_rect(fill = "#232322"),
+        text = element_text(color = "white"), strip.text = element_text(color = "white"), axis.text.y = element_text(color = "white"), axis.text.x = element_text(color = "#232322"))
+  
+
+ggplotly(plot_europe, tooltip = "Child_labor_in_percentage")
+```
+
+```{r}
+#| label: plot africa
+
+plot_africa <- data_join_beta %>%
+  filter(continent == "Africa", sex != "Total", !is.na(Child_labor_in_percentage), !is.na(sex)) %>%
+  ggplot(aes(x = sex, y = Child_labor_in_percentage, fill = sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ sub_region, scales = "fixed") +
+  labs(title = "Africa", x = "", y = "Child labor in %") +
+  theme_minimal() + 
+  scale_fill_manual(values = colors) +
+  scale_y_continuous(limits = c(0, 50)) +
+  theme(plot.background = element_rect(fill = "#232322"),
+        text = element_text(color = "white"), strip.text = element_text(color = "white"), axis.text.y = element_text(color = "white"), axis.text.x = element_text(color = "#232322"))
+
+ggplotly(plot_africa, tooltip = "Child_labor_in_percentage")
+```
+
+```{r}
+#| label: plot asia
+
+plot_asia <- data_join_beta %>%
+  filter(continent == "Asia", sex != "Total", !is.na(Child_labor_in_percentage), !is.na(sex)) %>%
+  ggplot(aes(x = sex, y = Child_labor_in_percentage, fill = sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ sub_region, scales = "fixed") +
+  labs(title = "Asia", x = "", y = "Child labor in %") +
+  theme_minimal() + 
+  scale_fill_manual(values = colors) +
+  scale_y_continuous(limits = c(0, 50)) +
+  theme(plot.background = element_rect(fill = "#232322"),
+        text = element_text(color = "white"), strip.text = element_text(color = "white"), axis.text.y = element_text(color = "white"), axis.text.x = element_text(color = "#232322"))
+
+ggplotly(plot_asia, tooltip = "Child_labor_in_percentage")
+```
+
+```{r}
+#| label: plot americas
+
+plot_americas <- data_join_beta %>%
+  filter(continent == "Americas", sex != "Total", !is.na(Child_labor_in_percentage), !is.na(sex)) %>%
+  ggplot(aes(x = sex, y = Child_labor_in_percentage, fill = sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ sub_region, scales = "fixed") +
+  labs(title = "Americas", x = "", y = "Child labor in %") +
+  theme_minimal() +
+  scale_fill_manual(values = colors) +
+  scale_y_continuous(limits = c(0, 50)) +
+  theme(plot.background = element_rect(fill = "#232322"),
+        text = element_text(color = "white"), strip.text = element_text(color = "white"), axis.text.y = element_text(color = "white"), axis.text.x = element_text(color = "#232322"))
+
+ggplotly(plot_americas, tooltip = "Child_labor_in_percentage")
+```
+
+```{r}
+#| label: plot oceania
+
+plot_oceania <- data_join_beta %>%
+  filter(continent == "Oceania", sex != "Total", !is.na(Child_labor_in_percentage), !is.na(sex)) %>%
+  ggplot(aes(x = sex, y = Child_labor_in_percentage, fill = sex)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ sub_region, scales = "fixed") +
+  labs(title = "Oceania", x = "", y = "Child labor in %") +
+  theme_minimal() +
+  scale_fill_manual(values = colors) +
+  scale_y_continuous(limits = c(0, 50)) +
+  theme(plot.background = element_rect(fill = "#232322"),
+        text = element_text(color = "white"), strip.text = element_text(color = "white"),axis.text.y = element_text(color = "white"), axis.text.x = element_text(color = "#232322"))
+
+ggplotly(plot_oceania, tooltip = "Child_labor_in_percentage")
+```
+
+::: {.card .text-white .bg-info .mb-3 style="max-width: 40rem;"}
+::: card-header
+### **What can we learn from this?** {.card-header}
+:::
+
+::: card-body
+As we zoom into the intricate tapestry of sub-regions within continents, a **nuanced picture of gender disparities in child labor** emerges. Notably, [Africa stands out with its highest female rates observed]{style="color: #f29c13; font-weight: bold;"} in Middle Africa (nearly 33%), Eastern Africa (32%), and Western Africa (31%)—a striking 5% higher than the fourth-highest rate in South-Eastern Asia. Interestingly, [South-Eastern Asia]{style="color: #f29c13; font-weight: bold;"} distinguishes itself by having an [equal distribution of female and male child laborers]{style="color: #f29c13; font-weight: bold;"}, a unique scenario not found elsewhere. In contrast, Europe exhibits relatively low rates, with figures not exceeding 11%—albeit still concerning. However, **the Americas** portray a different narrative, with notably elevated averages in each region. In the Caribbean, Haiti reports 20% female and 22% male rates, while in Central America, Nicaragua records 33% male and 18% female rates. Similarly, in South America, Paraguay reports NA for female rates and 20% for male rates. These insights highlight the complex interplay of socio-economic factors influencing child labor dynamics globally.
+:::
+:::
+
+# Scatterplot Analysis: Life Expectancy vs. Child Labor Rates by Country
+
+```{r}
+#| label: scaterplot childlabor and lifeExp
+
+scaterplot_vvandlifeexp <- data_join_beta_nosex %>%
+  filter(!is.na(Child_labor_in_percentage) & !is.na(Life_expectancy_at_birth)) %>%
+  ggplot(aes(x = Child_labor_in_percentage, y = Life_expectancy_at_birth, color = continent, group = country)) +
+  geom_point(alpha = 0.8, size = 4) +
+  labs(x ="Child labor in %" , y = "Life expectancy at birth", color ="Continents", caption = "Source: Unicef") +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "#232322"),
+        text = element_text(color = "white"), strip.text = element_text(color = "white"), axis.text.x = element_text(color = "white"), axis.text.y = element_text(color = "white"))
+
+ggplotly(scaterplot_vvandlifeexp)
+```
+
+::: {.card .text-white .bg-info .mb-3 style="max-width: 40rem;"}
+::: card-header
+### **What can we learn from this?** {.card-header}
+:::
+
+::: card-body
+Diving into the scatterplot reveals an **intriguing cluster in the top-left quadrant**, representing countries with high life expectancy (\>70 years) and low child labor rates (\<10%). This clustering suggests a correlation between the two variables: [where child labor is minimal, life expectancy tends to be higher]{style="color: #f29c13; font-weight: bold;"}. Conversely, countries grappling with child labor issues also face challenges in increasing life expectancy. However, the interactive nature of the graph precludes the inclusion of a negative regression line to visually underscore this relationship. Nevertheless, these observations shed light on the **intertwined dynamics between child labor and life expectancy globally**, emphasizing the need for targeted interventions to address both issues comprehensively.
+:::
+:::
+
+# Insights into Global Life Expectancy Trends
+
+## Tracking Life Expectancy Dynamics Across Continents
+
+```{r}
+#| label: timeseries continents
+
+data_timeseries <- full_join(unicef_metadata, countryContinent, by = join_by(country == country, numeric_code == country_code))
+data_timeseries <- filter(data_timeseries, continent %in% c("Africa", "Americas", "Asia", "Europe", "Oceania"))
+
+time_serie_lifeexp_continents <- data_timeseries %>%
+  ggplot(aes(x = year, y = Life_expectancy_at_birth, fill = country, color = continent)) +
+  geom_point(alpha = 0.4, size = 1) +
+  theme_minimal() +
+  facet_wrap(~continent, nrow = 1) +
+  scale_x_continuous(breaks = c(1960, 1980, 2000, 2020)) +
+  guides(color = "none", fill = "none") +
+  labs(x = "Time evolution", y = "Life expectancy at birth") +
+  theme(plot.background = element_rect(fill = "#232322"),
+        text = element_text(color = "white"), strip.text = element_text(color = "white"), axis.text.x = element_text(color = "white"), axis.text.y = element_text(color = "white"))
+  
+  ggplotly(time_serie_lifeexp_continents, tooltip = c("country", "year", "Life_expectancy_at_birth"))
+```
+
+::: {.card .text-white .bg-info .mb-3 style="max-width: 40rem;"}
+::: card-header
+### **What can we learn from this?** {.card-header}
+:::
+
+::: card-body
+Our first visualization, a time series spanning from 1960 to the present day, unveils a compelling narrative of **global life expectancy trends**. Theses plots paint a vivid picture of how life expectancy has evolved across nations within each continent. Notably, there is a [general upward trend towards surpassing the 80-year mark]{style="color: #f29c13; font-weight: bold;"}, with all continents except Africa achieving this milestone. Intriguingly, **the initial similarity between Asia and Africa in life expectancy has diverged over time**, with Asia's trajectory soaring above Europe's.
+:::
+:::
+
+# Mapping Global Life Expectancy Trends
+
+```{r}
+#| label: timeseries world
+
+time_serie_lifeexp_world <- data_timeseries %>%
+  ggplot(aes(x = year, y = Life_expectancy_at_birth, color = continent)) +
+  geom_point(alpha = 0.4, size = 1) +
+  geom_smooth(method = "lm", aes(color = "Global"), linetype = 2) +  
+  theme_minimal() +
+  scale_x_continuous(breaks = c(1960, 1980, 2000, 2020)) +
+  labs(x = "Time evolution", y = "Life expectancy at birth", color = "Continent") +
+  guides(color = guide_legend(title = NULL)) +
+  theme(plot.background = element_rect(fill = "#232322"),
+        text = element_text(color = "white"), strip.text = element_text(color = "white"), axis.text.x = element_text(color = "white"), axis.text.y = element_text(color = "white"))+
+  guides(color = guide_legend(override.aes = list(alpha = 1)))
+
+ggplotly(time_serie_lifeexp_world)
+```
+
+::: {.card .text-white .bg-info .mb-3 style="max-width: 40rem;"}
+::: card-header
+### **What can we learn from this?** {.card-header}
+:::
+
+::: card-body
+The second visualization provides a **more comprehensive view of this trend**, showcasing the disparities in life expectancy progression globally. With Africa trailing at the bottom and Europe and Asia soaring at the top, the visualization vividly illustrates the concept of divergent life expectancy trajectories. The inclusion of a "Global" regression line further emphasizes the overall global trend, highlighting the disparities and complexities inherent in global health dynamics.:::
+:::
+:::
+
+# Conclusion
+
+Through our journey across the realms of child labor and life expectancy, we've uncovered a rich tapestry of global health dynamics. From the vivid hues of child labor prevalence to the nuanced patterns of gender disparities, each visualization unveils a unique facet of the complex interplay between socio-economic factors and health outcomes. [As we traverse continents and time, we witness both triumphs and challenges, from soaring life expectancy trends to persistent child labor burdens]{style="color: #f29c13; font-weight: bold;"}. These insights underscore the imperative for targeted interventions and concerted efforts to address disparities, safeguard children's rights, and promote equitable health outcomes worldwide. Together, let us embark on a collective endeavor towards a healthier, more equitable future for all.
